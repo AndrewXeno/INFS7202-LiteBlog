@@ -11,8 +11,14 @@
     <link href="css/vendor/font-awesome.css" type="text/css" rel="stylesheet">
     <script src="js/vendor/jquery-2.2.3.min.js" type="text/javascript"></script>
     <script src="js/layout_config.js" type="text/javascript"></script>
+    <script src="js/vendor/tinymce.min.js" type="text/javascript"></script>
     <script src="js/form_validation.js" type="text/javascript"></script>
-    <script src="js/auto_gallery.js" type="text/javascript"></script>
+    <script src="js/geo_location.js" type="text/javascript"></script>
+    <script>
+    tinymce.init({
+        selector: 'textarea'
+    });
+    </script>
 </head>
 
 <body>
@@ -62,80 +68,61 @@
                     <div id="twocolwrap">
                         <!--wrap left and main column to locate right column-->
                         <div id="column_main">
-                            <div id="gallery">
-                                <img src="images/gallery00.jpg" alt="base picture">
-                                <ul>
-                                    <li class="pic" id="pic_1">
-                                        <a href="article_01.html"><img src="images/gallery01.jpg" alt="Lupin III 2015 picture"></a>
-                                        <a href="article_01.html" class=text><h5>Animation:</h5><p>Lupin III 2015</p></a>
-                                    </li>
-                                    <li class="pic" id="pic_2">
-                                        <a href="article_02.html"><img src="images/gallery02.jpg" alt="Zootopia picture"></a>
-                                        <a href="article_02.html" class=text><h5>Movie Review:</h5><p> Zootopia</p></a>
-                                    </li>
-                                    <li class="pic" id="pic_3">
-                                        <a href="article_03.html"><img src="images/gallery03.jpg" alt="plugin picture"></a>
-                                        <a href="article_03.html" class=text><h5>RPG Maker MV Plugin:</h5><p>Translucent Character Behind Tile</p></a>
-                                    </li>
-                                    <li class="pic" id="pic_4">
-                                        <a href="article_04.html"><img src="images/gallery04.jpg" alt="Ys VIII picture"></a>
-                                        <a href="article_04.html" class=text><h5>Game Preview:</h5><p>Ys VIII Lacrimosa of Dana</p></a>
-                                    </li>
-                                    <li class="pic" id="pic_5">
-                                        <a href="article_05.html"><img src="images/gallery05.jpg" alt="Finale of Lupin III 2015 picture"></a> 
-                                        <a href="article_05.html" class=text><h5>Animation:</h5><p>Finale of Lupin III 2015</p></a>
-                                    </li>
-                                </ul>
-                                <div id="gallery_prev" onclick="prevChange();"><p>&laquo;</p></div>
-                                <div id="gallery_next" onclick="picChange();"><p>&raquo;</p></div>
-                            </div>
-                            <a class="article_pre" href="article_01.html">
-                                <article class="passage">
-                                    <h3>Lupin III 2015</h3>
-                                    <h6>April 2016</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate dapibus laoreet. Proin est nisi, hendrerit eget tincidunt et, euismod non purus. Sed malesuada libero et finibus hendrerit. Sed tincidunt purus felis, at dignissim nisi pellentesque nec. Vestibulum a odio est. Donec venenatis eros id purus vehicula blandit. Nulla facilisi. </p>
-                                    <div id="jump-a" onclick="javascript:window.location.href='a.html';">
-                                    <p class="more">...</p>
-                                    </div>
-                                    <div class="clearfloat"></div>
-                                </article>
-                            </a>
-                            <a class="article_pre" href="article_02.html">
-                                <article class="passage">
-                                    <h3>Movie Review: Zootopia</h3>
-                                    <h6>April 2016</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate dapibus laoreet. Proin est nisi, hendrerit eget tincidunt et, euismod non purus. Sed malesuada libero et finibus hendrerit. Sed tincidunt purus felis, at dignissim nisi pellentesque nec. Vestibulum a odio est. Donec venenatis eros id purus vehicula blandit. Nulla facilisi. </p>
-                                    <p class="more">...</p>
-                                    <div class="clearfloat"></div>
-                                </article>
-                            </a>
-                            <a class="article_pre" href="article_03.html">
-                                <article class="passage">
-                                    <h3>RPG Maker MV Plugin: Translucent Character Behind Tile</h3>
-                                    <h6>March 2016</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate dapibus laoreet. Proin est nisi, hendrerit eget tincidunt et, euismod non purus. Sed malesuada libero et finibus hendrerit. Sed tincidunt purus felis, at dignissim nisi pellentesque nec. Vestibulum a odio est. Donec venenatis eros id purus vehicula blandit. Nulla facilisi. </p>
-                                    <p class="more">...</p>
-                                    <div class="clearfloat"></div>
-                                </article>
-                            </a>
-                            <a class="article_pre" href="article_04.html">
-                                <article class="passage">
-                                    <h3>Game Preview: Ys VIII Lacrimosa of Dana</h3>
-                                    <h6>March 2016</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate dapibus laoreet. Proin est nisi, hendrerit eget tincidunt et, euismod non purus. Sed malesuada libero et finibus hendrerit. Sed tincidunt purus felis, at dignissim nisi pellentesque nec. Vestibulum a odio est. Donec venenatis eros id purus vehicula blandit. Nulla facilisi. </p>
-                                    <p class="more">...</p>
-                                    <div class="clearfloat"></div>
-                                </article>
-                            </a>
-                            <a class="article_pre" href="article_05.html">
-                                <article class="passage">
-                                    <h3>Finale of Lupin III 2015</h3>
-                                    <h6>March 2016</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate dapibus laoreet. Proin est nisi, hendrerit eget tincidunt et, euismod non purus. Sed malesuada libero et finibus hendrerit. Sed tincidunt purus felis, at dignissim nisi pellentesque nec. Vestibulum a odio est. Donec venenatis eros id purus vehicula blandit. Nulla facilisi. </p>
-                                    <p class="more">...</p>
-                                    <div class="clearfloat"></div>
-                                </article>
-                            </a>
+                            <article class="passage">
+                                <div id="new_article">
+                                    <h2>New/Edit Article</h2>
+                                    <form method="post" action="form.php" id="article_form">
+                                        <fieldset>
+                                            <div class="input_field">
+                                                <label for="article_title">Article Title: </label>
+                                                <br>
+                                                <input type="text" id="article_title" name="article_title" onclick="changeColor(this);" />
+                                            </div>
+                                            <div class="input_field">
+                                                <label for="post_date">Post Date: </label>
+                                                <br>
+                                                <input type="date" id="post_date" name="post_date" onclick="changeColor(this);" />
+                                            </div>
+                                            <div class="input_field">
+                                                <label for="category">Category: </label>
+                                                <br>
+                                                <select id="category" name="category" onclick="changeColor(this);">
+                                                    <option value="0">Please select a category type</option>
+                                                    <option value="1">Category 1</option>
+                                                    <option value="2">Category 2</option>
+                                                    <option value="3">Category 3</option>
+                                                    <option value="4">Category 4</option>
+                                                    <option value="5">Category 5</option>
+                                                    <option value="6">Category 6</option>
+                                                </select>
+                                            </div>
+                                            <div class="input_field">
+                                                <label for="preview_text">Preview Text: </label>
+                                                <br>
+                                                <input type="text" id="preview_text" name="preview_text" onclick="changeColor(this);" />
+                                            </div>
+                                            <div class="input_field">
+                                                <label for="text_area">Main Body: </label>
+                                                <br>
+                                                <textarea id="text_area" name="text_area" onclick="changeColor(this);"></textarea>
+                                            </div>
+                                            <div class="input_field">
+                                                <label for="upload_file">Attached Pictures: </label>
+                                                <br>
+                                                <input type="file" name="upload_file" id="upload_file" multiple="multiple" onclick="changeColor(this);">
+                                            </div>
+                                            <div class="input_field">
+                                                <label for="geo_location">Geographic Information: </label>
+                                                <br>
+                                                <input type="checkbox" name="geo_location" value="track location" id="geo_location" onclick="updateGeoInfo(this);">Save my current location.
+                                                <p id="geo_feedback">&nbsp;</p>
+                                            </div>
+                                        </fieldset>
+                                        <p id="form_feedback">&nbsp;</p>
+                                    </form>
+                                    <button id="form_submit" onclick="formValidation();">Post</button>
+                                </div>
+                            </article>
                         </div>
                     </div>
                     <div id="column_right">
